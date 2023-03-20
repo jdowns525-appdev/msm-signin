@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   # Routes for the User account:
   get("/", { :controller => "user_authentication", :action => "index"})
+  get("/bookmarks", { :controller => "movies", :action => "bookmarks"})
+
   # SIGN UP FORM
   get("/user_sign_up", { :controller => "user_authentication", :action => "sign_up_form" })        
   # CREATE RECORD

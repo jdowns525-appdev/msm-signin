@@ -1,0 +1,28 @@
+<h1>bob Example's bookmarks</h1>
+
+<form action="/insert_bookmark" method="post">
+
+  <select name="query_movie_id" id="movie_id_box">
+  <option value="<%= @the_movie.id %>">
+        <%= @the_movie.title %>
+      </option>
+  </select>
+  <button>
+    Bookmark this movie!
+  </button>
+</form>
+<hr>
+<table class="table" border="1">
+  <tr>
+    <th>
+      Movie
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+</table>
