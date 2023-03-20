@@ -130,11 +130,14 @@
         </td>
 
         <td>
-          <%= a_movie.duration %>
+          <%= a_movie.duration %> minutes
         </td>
 
         <td>
-          <%= a_movie.director_id %>
+          <%#= a_movie.director_id %>
+
+          <%= a_movie.director.name%>
+          (<%= a_movie.director.dob%>)
         </td>
 
         <td>
