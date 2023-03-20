@@ -17,21 +17,46 @@
   <body>
     <nav>
       <ul>
-          <li>
-            <a href="/user_sign_in">
-              Sign in
-            </a>
-          </li>
-          <li>
-            <a href="/user_sign_up">
-              Sign up
-            </a>
-          </li>
+        <% if session.fetch(:user_id) == nil %>
+          
+        <li>
+          <a href="/user_sign_up">
+            Sign up
+          </a>
+        </li>
+
+        <li>
+          <a href="/user_sign_in">
+            Sign in
+          </a>
+        </li>
+          
         <li>
           <a href="/">
             Home
           </a>
         </li>
+
+        <% else %>
+        <li>
+          <a href="/user_sign_out" >
+            Sign out
+          </a>
+        </li>
+
+        <li>
+          <a href="/bookmarks" >
+            My bookmarks
+          </a>
+        </li>
+
+         <li>
+          <a href="/">
+            Home
+          </a>
+        </li>
+        
+        <% end %>
       </ul>
     </nav>
     <%= yield %>
