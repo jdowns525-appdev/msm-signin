@@ -15,24 +15,26 @@
     </h2>
 
     <form action="/insert_bookmark" method="post">
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id">
-      </div>
 
       <div>
         <label for="movie_id_box">
-          Movie
+          
         </label>
 
-        <input type="text" id="movie_id_box" name="query_movie_id">
+        <%#input type="text" id="movie_id_box" name="query_movie_id"%>
+
+        <select name="query_movie_id">
+          <% Movie.all.order(:title).each do |a_movie| %>
+            <option>
+            <%= a_movie.title %>
+            </option>
+          <% end %>
+        </select>
+
       </div>
 
       <button>
-        Create bookmark
+        Bookmark this movie!
       </button>
     </form>
   </div>

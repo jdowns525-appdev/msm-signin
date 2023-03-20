@@ -18,7 +18,7 @@
     <nav>
     
       <ul>
-        <% if session.fetch(:user_id) == nil %>
+        <% if @current_user == nil %>
           
         <li>
           <a href="/user_sign_up">
