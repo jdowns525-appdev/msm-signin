@@ -1,8 +1,28 @@
 Rails.application.routes.draw do
 
+  get("/add_bookmark", {:controller => "movies", :action => "add_user_bookmark" })
+
+  # Routes for the Bookmark resource:
+
+  # CREATE
+  post("/insert_bookmark", { :controller => "bookmarks", :action => "create" })
+          
+  # READ
+  get("/bookmarks", { :controller => "bookmarks", :action => "index" })
+  
+  get("/bookmarks/:path_id", { :controller => "bookmarks", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_bookmark/:path_id", { :controller => "bookmarks", :action => "update" })
+  
+  # DELETE
+  get("/delete_bookmark/:path_id", { :controller => "bookmarks", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
   get("/", { :controller => "user_authentication", :action => "index"})
-  get("/bookmarks", { :controller => "movies", :action => "bookmarks"})
 
   # SIGN UP FORM
   get("/user_sign_up", { :controller => "user_authentication", :action => "sign_up_form" })        
